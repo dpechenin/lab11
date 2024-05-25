@@ -10,6 +10,7 @@
 		029171F02C012128005A5C6E /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 029171EF2C012128005A5C6E /* main.c */; };
 		029171F82C012194005A5C6E /* tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 029171F72C012194005A5C6E /* tree.c */; };
 		029171FA2C0121CE005A5C6E /* func.c in Sources */ = {isa = PBXBuildFile; fileRef = 029171F92C0121CE005A5C6E /* func.c */; };
+		029171FC2C012688005A5C6E /* hash.c in Sources */ = {isa = PBXBuildFile; fileRef = 029171FB2C012688005A5C6E /* hash.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,7 @@
 		029171F62C01215E005A5C6E /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		029171F72C012194005A5C6E /* tree.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = tree.c; sourceTree = "<group>"; };
 		029171F92C0121CE005A5C6E /* func.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = func.c; sourceTree = "<group>"; };
+		029171FB2C012688005A5C6E /* hash.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hash.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +66,9 @@
 			children = (
 				029171EF2C012128005A5C6E /* main.c */,
 				029171F72C012194005A5C6E /* tree.c */,
-				029171F62C01215E005A5C6E /* Header.h */,
 				029171F92C0121CE005A5C6E /* func.c */,
+				029171FB2C012688005A5C6E /* hash.c */,
+				029171F62C01215E005A5C6E /* Header.h */,
 			);
 			path = lab11;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 				029171FA2C0121CE005A5C6E /* func.c in Sources */,
 				029171F02C012128005A5C6E /* main.c in Sources */,
 				029171F82C012194005A5C6E /* tree.c in Sources */,
+				029171FC2C012688005A5C6E /* hash.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

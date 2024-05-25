@@ -25,6 +25,6 @@ void printFlat(flat); // функция для вывода данных про 
 tree* treeFromArray(flat*, unsigned int); // функция для создания бинарного дерева из массива
 flat* generateData(unsigned int, int); // функиция для генерации данных
 void freeTree(tree *p); // функция удаления дерева
-void searchTree(tree*, char*);
+void searchTree(tree*, char*); // функция для поиска в дереве
 
 #endif /* Header_h */
