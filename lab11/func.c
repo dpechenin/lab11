@@ -25,7 +25,7 @@ flat *generateData(unsigned int n, int c) {
     int tmp = rand() % 10;
     for (int i = 0; i < tmp; i++) {
         int tmp2 = rand() % n;
-        arrOfFlats[tmp2] = arrOfFlats[c];
+        strcpy(arrOfFlats[tmp2].name, arrOfFlats[c].name);
     }
     
     return arrOfFlats;
