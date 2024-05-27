@@ -33,6 +33,7 @@
 		029171F92C0121CE005A5C6E /* func.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = func.c; sourceTree = "<group>"; };
 		029171FB2C012688005A5C6E /* hash.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = hash.c; sourceTree = "<group>"; };
 		02FAAEBC2C04F0E5004C5911 /* graphic.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = graphic.py; sourceTree = "<group>"; };
+		02FAAEBD2C04F435004C5911 /* results.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = results.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 				029171FB2C012688005A5C6E /* hash.c */,
 				029171F62C01215E005A5C6E /* Header.h */,
 				02FAAEBC2C04F0E5004C5911 /* graphic.py */,
+				02FAAEBD2C04F435004C5911 /* results.txt */,
 			);
 			path = lab11;
 			sourceTree = "<group>";
