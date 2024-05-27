@@ -25,10 +25,10 @@ int main(void) {
         timeTreeSearch[i] = (double)(t2 - t1) / CLOCKS_PER_SEC;
         freeTree(testTree);
             
-        HashTable *table = HtFromArray(arrOfFlats, amountsOfData[i]);
+
         printf("Поиск хэш-таблицей:\n");
         t3 = clock();
-        ht_search(table, nameToFind);
+        
         t4 = clock();
         timeHashSearch[i] = (double)(t4 - t3) / CLOCKS_PER_SEC;
         free(arrOfFlats);
