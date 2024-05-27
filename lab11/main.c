@@ -42,5 +42,21 @@ int main(void) {
     for (int i = 0; i < 7; i++) {
         printf("%u \t\t\t\t\t %f \t\t\t\t\t %f\n", amountsOfData[i], timeTreeSearch[i], timeHashSearch[i]);
     }
+    FILE *f = fopen("/Users/danilapecenin/Library/Mobile Documents/com~apple~CloudDocs/Documents/XCode Projects/lab11/lab11/results.txt", "w");
+    if(!f) {
+        printf("Неудалось записать информацию в файл\n");
+    }
+    else {
+        for (int i = 0; i < 7; ++i) {
+            fprintf(f, "%u\n", amountsOfData[i]);
+        }
+        for (int i = 0; i < 7; i++) {
+            fprintf(f, "%f\n", timeTreeSearch[i]);
+        }
+        for (int i = 0; i < 7; i++) {
+            fprintf(f, "%f\n", timeHashSearch[i]);
+        }
+    }
+    fclose(f);
     return 0;
 }
