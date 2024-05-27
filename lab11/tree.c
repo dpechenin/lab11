@@ -37,14 +37,19 @@ tree* searchEl(tree *root, char *v) {
 }
 
 void searchTree(tree * root, char *val) {
+    int count = 0;
     tree *cur = NULL,
     *tmp = root;
     do {
         cur = searchEl(tmp, val);
         if (!cur) break;
         printFlat(cur->flat);
+        count++;
         tmp = cur -> right;
     } while(tmp);
+    if (!count) {
+        printf("Ничего не было найдено!\n");
+    }
 }
 
 void freeTree(tree *p) {

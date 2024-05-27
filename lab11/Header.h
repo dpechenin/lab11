@@ -5,7 +5,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-#define CAPACITY 100000
 
 typedef struct flat flat;
 struct flat{ // определяем структуру наших данных
@@ -26,7 +25,7 @@ struct TreeNode{ // структура для бинарного дерева
 typedef struct LinkedList LinkedList;
 struct LinkedList {
     flat *flat;
-    LinkedList* next;
+    LinkedList *next;
 };
 
 typedef struct HashTable HashTable;
@@ -41,4 +40,8 @@ tree* treeFromArray(flat*, unsigned int); // функция для создан�
 flat* generateData(unsigned int, int); // функиция для генерации данных
 void freeTree(tree *p); // функция удаления дерева
 void searchTree(tree*, char*); // функция для поиска в дереве
+HashTable* createTable(flat*, unsigned int);
+void deleteTable(HashTable*, unsigned int);
+void hashSearch(HashTable*, char*, unsigned int);
 #endif /* Header_h */
+
