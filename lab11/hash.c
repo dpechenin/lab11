@@ -1,6 +1,6 @@
 #include "Header.h"
 
-unsigned long getHash(char *str, unsigned long len, unsigned int n) {
+unsigned long getHash(char *str, unsigned long len, unsigned int m) {
     unsigned long b = 378551;
     unsigned long a = 63689;
     unsigned long hash = 0;
@@ -10,22 +10,22 @@ unsigned long getHash(char *str, unsigned long len, unsigned int n) {
         hash = hash * a + (unsigned long)(*str);
         a = a * b;
     }
-    return hash % n;
+    return hash % m;
 }
 
-HashTable* createTable(flat* arr, unsigned int n) {
+HashTable* createTable(flat* arr, unsigned int n, unsigned int m) {
     HashTable *table = (HashTable*)malloc(sizeof(HashTable));
     if (table != NULL) {
-        table->flats = (flat**)calloc(n, sizeof(flat*));
-        table->overflow_buckets = (LinkedList**)calloc(n, sizeof(LinkedList*));
+        table->flats = (flat**)calloc(m, sizeof(flat*));
+        table->overflow_buckets = (LinkedList**)calloc(m, sizeof(LinkedList*));
         if (table->flats != NULL && table->overflow_buckets != NULL) {
-            for (int i = 0; i < n; i++) {
+            for (int i = 0; i < m; i++) {
                 table->flats[i] = NULL;
                 table->overflow_buckets[i] = NULL;
             }
             
             for (unsigned int i = 0; i < n; i++) {
-                unsigned long hash = getHash(arr[i].name, (unsigned long)(strlen(arr->name)), n);
+                unsigned long hash = getHash(arr[i].name, (unsigned long)(strlen(arr->name)), m);
                 if (table->flats[hash] == NULL) {
                     table->flats[hash] = (flat*)malloc(sizeof(flat));
                     table->flats[hash]->type = arr[i].type;
@@ -79,19 +79,18 @@ void free_linkedlist(LinkedList* list) {
     }
 }
 
-void deleteTable(HashTable *table, unsigned int n) {
+void deleteTable(HashTable *table, unsigned int m) {
     if (table == NULL) {
         return;
     }
     if (table->flats != NULL) {
-        for (unsigned int i = 0; i < n; i++) {
-            
+        for (unsigned int i = 0; i < m; i++) {
             free(table->flats[i]);
         }
     }
     if (table->overflow_buckets != NULL) {
         LinkedList** buckets = table->overflow_buckets;
-            for (int i=0; i < n; i++)
+            for (int i=0; i < m; i++)
                   free_linkedlist(buckets[i]);
             free(buckets);
     }
@@ -99,13 +98,13 @@ void deleteTable(HashTable *table, unsigned int n) {
     free(table);
 }
 
-void hashSearch(HashTable *table, char *key, unsigned int n) {
+void hashSearch(HashTable *table, char *key, unsigned int m) {
     int count = 0;
     if (table == NULL) {
         printf("Ваша хэш-таблица пуста\n");
         return;
     }
-    unsigned long hash = getHash(key, strlen(key), n);
+    unsigned long hash = getHash(key, strlen(key), m);
     if (!strcmp(key, table->flats[hash]->name)) {
         printFlat((*table->flats[hash]));
         count++;

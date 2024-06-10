@@ -25,16 +25,23 @@ int main(void) {
         timeTreeSearch[i] = (double)(t2 - t1) / CLOCKS_PER_SEC;
         freeTree(testTree);
             
-        HashTable *table = createTable(arrOfFlats, amountsOfData[i]);
+        unsigned int m;
+        if (amountsOfData[i] > CAPACITY) {
+            m = CAPACITY;
+        }
+        else {
+            m = amountsOfData[i];
+        }
+        HashTable *table = createTable(arrOfFlats, amountsOfData[i], m);
         printf("Поиск хэш-таблицей:\n");
         t3 = clock();
-        hashSearch(table, nameToFind, amountsOfData[i]);
+        hashSearch(table, nameToFind, m);
         t4 = clock();
         timeHashSearch[i] = (double)(t4 - t3) / CLOCKS_PER_SEC;
         free(arrOfFlats);
-        deleteTable(table, amountsOfData[i]);
+        deleteTable(table, m);
         printf("Нажмите пробел, чтобы продолжить тест дальше:\n");
-        getchar();
+//        getchar();
     }
     system("clear");
     printf("Получившиеся результаты:\n");
